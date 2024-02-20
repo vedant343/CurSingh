@@ -15,7 +15,6 @@ import {
   users,
 } from "../../../migrations/schema";
 
-
 export const workspaces = pgTable("workspaces", {
   id: uuid("id").defaultRandom().primaryKey().notNull(),
   createdAt: timestamp("created_at", {
