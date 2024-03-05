@@ -5,10 +5,18 @@ import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import Link from "next/link";
 import Logo from "../../../../public/cypresslogo.svg";
 import Image from "next/image";
+import { Input } from "@/components/ui/input";
 
 const LoginPage = () => {
   const [submitError, setSubmitError] = useState("");
@@ -56,6 +64,38 @@ const LoginPage = () => {
             cypress.
           </span>
         </Link>
+        <FormDescription
+          className="
+        text-foreground/60"
+        >
+          An all-In-One Collaboration and Productivity Platform
+        </FormDescription>
+        <FormField
+          disabled={isLoading}
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input type="email" placeholder="Email" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          disabled={isLoading}
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input type="password" placeholder="Password" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
       </form>
     </Form>
   );
