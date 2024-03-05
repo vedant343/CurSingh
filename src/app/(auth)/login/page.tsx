@@ -96,6 +96,7 @@ const LoginPage = () => {
             </FormItem>
           )}
         />
+        {submitError && <FormMessage>{submitError}</FormMessage>}
       </form>
     </Form>
   );
