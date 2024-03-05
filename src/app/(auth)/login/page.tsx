@@ -2,7 +2,7 @@ import { FormSchema } from "@/lib/types";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import * as z from "zod"; run dev
+import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
