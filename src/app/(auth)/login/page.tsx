@@ -1,12 +1,16 @@
+"use client";
+
 import { FormSchema } from "@/lib/types";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { Form, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Form } from "@/components/ui/form";
+import Link from "next/link";
+import Logo from "../../../../public/cypresslogo.svg";
+import Image from "next/image";
 
 const LoginPage = () => {
-  const router = useRouter();
   const [submitError, setSubmitError] = useState("");
 
   const form = useForm<Zod.infer<typeof FormSchema>>({
@@ -20,15 +24,41 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
     formData
   ) => {
-    const { error } = await actionLoginUser(formData);
-    if (error) {
-      form.reset();
-      setSubmitError(error.message);
-    }
-    router.replace('/dashboard');
+    // const { error } = await actionLoginUser(formData);
+    // if (error) {
+    //   form.reset();
+    //   setSubmitError(error.message);
+    // }
+    // router.replace('/dashboard');
   };
 
-  return <Form {...form}></Form>;
+  return (
+    <Form {...form}>
+      <form
+        onChange={() => {
+          if (submitError) setSubmitError("");
+        }}
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-full sm:justify-center sm:w-[400px] space-y-6 flex flex-col"
+      >
+        <Link
+          href="/"
+          className="w-full
+          flex
+          justify-left
+          items-center"
+        >
+          <Image src={Logo} alt="cypress Logo" width={50} height={50} />
+          <span
+            className="font-semibold
+          dark:text-white text-4xl first-letter:ml-2"
+          >
+            cypress.
+          </span>
+        </Link>
+      </form>
+    </Form>
+  );
 };
 
 export default LoginPage;
