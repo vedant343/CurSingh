@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   Form,
   FormControl,
@@ -18,7 +19,9 @@ import Link from "next/link";
 import Logo from "../../../../public/cypresslogo.svg";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-
+import { Button } from "@/components/ui/button";
+import Loader from "@/components/global/Loader";
+import router from "next/router";
 
 const LoginPage = () => {
   const [submitError, setSubmitError] = useState("");
@@ -34,12 +37,12 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
     formData
   ) => {
-    // const { error } = await actionLoginUser(formData);
-    // if (error) {
-    //   form.reset();
-    //   setSubmitError(error.message);
-    // }
-    // router.replace('/dashboard');
+    const { error } = await actionLoginUser(formData);
+    if (error) {
+      form.reset();
+      setSubmitError(error.message);
+    }
+    router.replace("/dashboard");
   };
 
   return (
@@ -99,6 +102,20 @@ const LoginPage = () => {
           )}
         />
         {submitError && <FormMessage>{submitError}</FormMessage>}
+        <Button
+          type="submit"
+          className="w-full p-6"
+          size="lg"
+          disabled={isLoading}
+        >
+          {!isLoading ? "Login" : <Loader />}
+        </Button>
+        <span className="self-center">
+          Dont have an account?{" "}
+          <Link href="/signup" className="text-primary">
+            Sign Up
+          </Link>
+        </span>
       </form>
     </Form>
   );
