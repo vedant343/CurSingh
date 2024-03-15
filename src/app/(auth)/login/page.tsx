@@ -1,11 +1,10 @@
 "use client";
-
-import { FormSchema } from "@/lib/types";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
+import { FormSchema } from "@/lib/types";
 import {
   Form,
   FormControl,
@@ -14,19 +13,20 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-
 import Link from "next/link";
-import Logo from "../../../../public/cypresslogo.svg";
 import Image from "next/image";
+import Logo from "../../../../public/cypresslogo.svg";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/global/Loader";
-import router from "next/router";
+import { Seperator } from "../../../components/ui/seperator";
+import { actionLoginUser } from "../../../lib/server-action/auth-section";
 
 const LoginPage = () => {
+  const router = useRouter();
   const [submitError, setSubmitError] = useState("");
 
-  const form = useForm<Zod.infer<typeof FormSchema>>({
+  const form = useForm<z.infer<typeof FormSchema>>({
     mode: "onChange",
     resolver: zodResolver(FormSchema),
     defaultValues: { email: "", password: "" },
@@ -56,7 +56,8 @@ const LoginPage = () => {
       >
         <Link
           href="/"
-          className="w-full
+          className="
+          w-full
           flex
           justify-left
           items-center"
@@ -110,7 +111,7 @@ const LoginPage = () => {
         >
           {!isLoading ? "Login" : <Loader />}
         </Button>
-        <span className="self-center">
+        <span className="self-container">
           Dont have an account?{" "}
           <Link href="/signup" className="text-primary">
             Sign Up
