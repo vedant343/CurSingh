@@ -23,8 +23,7 @@ import Loader from "@/components/global/Loader";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { MailCheck } from "lucide-react";
 import { FormSchema } from "@/lib/types";
-import { actionSignUpUser } from "@/lib/server-actions/auth-actions";
-
+import { actionSignUpUser } from "@/lib/server-action/auth-section";
 const SignUpFormSchema = z
   .object({
     email: z.string().describe("Email").email({ message: "Invalid Email" }),

@@ -1,19 +1,18 @@
-import TitleSection from '@/components/landing-page/title-section';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import React from 'react';
-import Banner from '../../../public/appBanner.png';
-import Cal from '../../../public/cal.png';
-import Diamond from '../../../public/icons/diamond.svg';
-import CheckIcon from '../../../public/icons/check.svg';
-import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from '@/lib/constants';
-import { randomUUID } from 'crypto';
-import { twMerge } from 'tailwind-merge';
-import clsx from 'clsx';
-import CustomCard from '@/components/landing-page/custom-card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
-
+import TitleSection from "@/components/landing-page/title-section";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import React from "react";
+import Banner from "../../../public/appBanner.png";
+import Cal from "../../../public/cal.png";
+import Diamond from "../../../public/icons/diamond.svg";
+import CheckIcon from "../../../public/icons/check.svg";
+import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from "@/lib/constants";
+import { randomUUID } from "crypto";
+import { twMerge } from "tailwind-merge";
+import clsx from "clsx";
+import CustomCard from "@/components/landing-page/custom-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 
 const HomePage = () => {
   return (
@@ -35,7 +34,7 @@ const HomePage = () => {
         />
         <div className="flex justify-center items-center">
           <div
-            className="bg-white
+            className="
                p-[2px]
                mt-6
                rounded-xl
