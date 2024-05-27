@@ -3,6 +3,7 @@ import { AuthUser } from "@supabase/supabase-js";
 import React, { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { v4 } from "uuid";
+
 import {
   Card,
   CardContent,
@@ -34,7 +35,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
 }) => {
   const { toast } = useToast();
   const router = useRouter();
-  // const { dispatch } = useAppState();
+  const { dispatch } = useAppState();
   const [selectedEmoji, setSelectedEmoji] = useState("💼");
   const supabase = createClientComponentClient();
   const {
