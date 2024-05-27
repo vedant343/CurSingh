@@ -278,7 +278,7 @@ const appReducer = (
   }
 };
 
-const AppStateContext = createContext<
+export const AppStateContext = createContext<
   | {
       state: AppState;
       dispatch: Dispatch<Action>;
@@ -293,7 +293,9 @@ interface AppStateProviderProps {
   children: React.ReactNode;
 }
 
-const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
+export const AppStateProvider: React.FC<AppStateProviderProps> = ({
+  children,
+}) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
   const pathname = usePathname();
 
@@ -304,6 +306,14 @@ const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
         return urlSegments[1];
       }
   }, [pathname]);
+
+  const useAppState = () => {
+    const context = useContext(AppStateContext);
+    if (!context) {
+      throw new Error("useAppState must be used within an AppStateProvider");
+    }
+    return context;
+  };
 
   const folderId = useMemo(() => {
     const urlSegments = pathname?.split("/").filter(Boolean);
@@ -348,14 +358,4 @@ const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
       {children}
     </AppStateContext.Provider>
   );
-};
-
-export default AppStateProvider;
-
-export const useAppState = () => {
-  const context = useContext(AppStateContext);
-  if (!context) {
-    throw new Error("useAppState must be used within an AppStateProvider");
-  }
-  return context;
 };
