@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
         className
       )}
     >
-      Sidebar
+     
       {/* <div>
         <WorkspaceDropdown
           privateWorkspaces={privateWorkspaces}
