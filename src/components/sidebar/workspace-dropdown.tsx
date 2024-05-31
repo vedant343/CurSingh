@@ -1,7 +1,7 @@
 "use client";
 import { useAppState } from "@/lib/providers/state-provider";
 import { workspace } from "@/lib/supabase/supabase.types";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 interface WorkspaceDropdownProps {
   privateWorkspaces: workspace[] | [];
