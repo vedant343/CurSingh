@@ -1,4 +1,4 @@
-# 🌐 Real-Time Cursors Web App
+# 🌐 CurSingh-Real-Time Cursors Web App
 
 
 This project is a web application that enables multiple users to interact in real-time using cursors. Users can collaborate and engage with each other through the platform.
