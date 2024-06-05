@@ -11,13 +11,14 @@ import React, {
 import { File, Folder, workspace } from "../supabase/supabase.types";
 import { usePathname } from "next/navigation";
 import { getFiles } from "../supabase/queries";
+// import AppState
 
 export type appFoldersType = Folder & { files: File[] | [] };
 export type appWorkspacesType = workspace & {
   folders: appFoldersType[] | [];
 };
 
-interface AppState {
+export interface AppState {
   workspaces: appWorkspacesType[] | [];
 }
 
@@ -321,6 +322,13 @@ const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
       }
   }, [pathname]);
 
+  const useAppState = () => {
+    const context = useContext(AppStateContext);
+    if (!context) {
+      throw new Error("useAppState must be used within an AppStateProvider");
+    }
+    return [context.dispatch, context.state]; // Ensure it returns an array
+  };
   useEffect(() => {
     if (!folderId || !workspaceId) return;
     const fetchFiles = async () => {
@@ -351,11 +359,3 @@ const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
 };
 
 export default AppStateProvider;
-
-export const useAppState = () => {
-  const context = useContext(AppStateContext);
-  if (!context) {
-    throw new Error("useAppState must be used within an AppStateProvider");
-  }
-  return context;
-};
