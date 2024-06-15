@@ -14,7 +14,6 @@ import { Button } from "../ui/button";
 import Loader from "./Loader";
 import { Price, ProductWirhPrice } from "@/lib/supabase/supabase.types";
 import { useToast } from "../ui/use-toast";
-// import { getStripe } from "@/lib/stripe/stripeClient";
 
 interface SubscriptionModalProps {
   products: ProductWirhPrice[];
