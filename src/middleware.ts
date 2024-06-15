@@ -8,9 +8,9 @@ export async function middleware(req: NextRequest) {
     data: { session },
   } = await supabase.auth.getSession();
   if (req.nextUrl.pathname.startsWith("/dashboard")) {
-    // if (!session) {
-    //   return NextResponse.redirect(new URL("/login", req.url));
-    // }
+    if (!session) {
+      return NextResponse.redirect(new URL("/login", req.url));
+    }
   }
 
   const emailLinkError = "Email link is invalid or has expired";

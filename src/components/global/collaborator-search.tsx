@@ -15,7 +15,6 @@ import { Input } from "../ui/input";
 import { ScrollArea } from "../ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
-import { getUsersFromSearch } from "@/lib/supabase/queries";
 
 interface CollaboratorSearchProps {
   existingCollaborators: User[] | [];
