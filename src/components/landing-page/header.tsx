@@ -7,12 +7,10 @@ import Logo from "../../../public/cypresslogo.svg";
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -84,7 +82,7 @@ const Header = () => {
           dark:text-white
         "
         >
-          cypress.
+          CurSingh
         </span>
       </Link>
       <NavigationMenu className="hidden md:block">
