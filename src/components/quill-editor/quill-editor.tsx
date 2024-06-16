@@ -21,16 +21,13 @@ import {
   updateFolder,
   updateWorkspace,
 } from "@/lib/supabase/queries";
-
 import { usePathname, useRouter } from "next/navigation";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
