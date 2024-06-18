@@ -2,22 +2,22 @@ export const dynamic = "force-dynamic";
 
 import React from "react";
 import QuillEditor from "@/components/quill-editor/quill-editor";
-import { getFileDetails } from "@/lib/supabase/queries";
+import { getFolderDetails } from "@/lib/supabase/queries";
 import { redirect } from "next/navigation";
 
-const File = async ({ params }: { params: { fileId: string } }) => {
-  const { data, error } = await getFileDetails(params.fileId);
+const Folder = async ({ params }: { params: { folderId: string } }) => {
+  const { data, error } = await getFolderDetails(params.folderId);
   if (error || !data.length) redirect("/dashboard");
 
   return (
     <div className="relative ">
       <QuillEditor
-        dirType="file"
-        fileId={params.fileId}
+        dirType="folder"
+        fileId={params.folderId}
         dirDetails={data[0] || {}}
       />
     </div>
   );
 };
 
-export default File;
+export default Folder;
