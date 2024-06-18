@@ -19,7 +19,6 @@ import Logo from "../../../../public/cypresslogo.svg";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Loader from "@/components/global/Loader";
-import { Separator } from "@/components/ui/separator";
 import { actionLoginUser } from "@/lib/server-actions/auth-actions";
 
 const LoginPage = () => {
