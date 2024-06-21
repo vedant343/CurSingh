@@ -19,72 +19,72 @@ export const USERS = [
       "CurSingh has been a game-changer for our team. With its reliable end-to-end testing, we catch bugs early, leading to faster development cycles and improved collaboration.",
   },
   {
-    name: "Bob",
+    name: "Bobby",
     message:
       "I used to spend hours debugging frontend issues, but CurSingh simplified everything. Now, I'm more productive, and my colleagues can trust our code thanks to CurSingh.",
   },
   {
-    name: "Charlie",
+    name: "Shahrukh",
     message:
       "CurSingh has transformed the way we work. Our QA and development teams are on the same page, and our productivity has skyrocketed. It's a must-have tool.",
   },
   {
-    name: "David",
+    name: "Vicky",
     message:
       "I was skeptical at first, but CurSingh exceeded my expectations. Our project timelines have improved, and collaboration between teams is seamless.",
   },
   {
-    name: "Ella",
+    name: "Aman",
     message:
       "CurSingh made writing and running tests a breeze. Our team's productivity has never been higher, and we're delivering more reliable software.",
   },
   {
-    name: "Frank",
+    name: "Vineeta",
     message:
       "Thanks to CurSingh, we've eliminated testing bottlenecks. Our developers and testers collaborate effortlessly, resulting in quicker releases.",
   },
   {
-    name: "Grace",
+    name: "Deepinder",
     message:
       "CurSingh has improved our development process significantly. We now have more time for innovation, and our products are of higher quality.",
   },
   {
-    name: "Hank",
+    name: "Ashneer",
     message:
       "CurSingh's user-friendly interface made it easy for our non-technical team members to contribute to testing. Our workflow is much more efficient now.",
   },
   {
-    name: "Ivy",
+    name: "Virat",
     message:
       "Our team's collaboration improved immensely with CurSingh. We catch issues early, leading to less friction and quicker feature deployments.",
   },
   {
-    name: "Jack",
+    name: "Ronaldo",
     message:
       "CurSingh's robust testing capabilities have elevated our development standards. We work more harmoniously, and our releases are more reliable.",
   },
   {
-    name: "Katherine",
+    name: "Grealish",
     message:
       "CurSingh is a lifesaver for our cross-functional teams. We're more productive, and there's a shared sense of responsibility for product quality.",
   },
   {
-    name: "Liam",
+    name: "Musiala",
     message:
       "CurSingh has helped us maintain high standards of quality. Our team's collaboration has improved, resulting in faster development cycles.",
   },
   {
-    name: "Mia",
+    name: "Foden",
     message:
       "CurSingh is a powerful tool that improved our productivity and collaboration. It's now an integral part of our development process.",
   },
   {
-    name: "Nathan",
+    name: "Messi",
     message:
       "CurSingh's user-friendly interface and detailed reporting have made testing a breeze. Our team's productivity is at an all-time high.",
   },
   {
-    name: "Olivia",
+    name: "Mbappe",
     message:
       "We saw immediate benefits in terms of productivity and collaboration after adopting CurSingh. It's an essential tool for our development workflow.",
   },
@@ -94,17 +94,17 @@ export const USERS = [
       "CurSingh has streamlined our testing process and brought our teams closer. We're more efficient and deliver better results.",
   },
   {
-    name: "Quinn",
+    name: "Rishi",
     message:
       "CurSingh has been a game-changer for us. Our productivity and collaboration have improved significantly, leading to better software.",
   },
   {
-    name: "Rachel",
+    name: "Georgia",
     message:
       "Thanks to CurSingh, our testing process is now a seamless part of our development cycle. Our teams collaborate effortlessly.",
   },
   {
-    name: "Sam",
+    name: "Heung",
     message:
       "CurSingh is a fantastic tool that has revolutionized our workflow. Our productivity and collaboration have reached new heights.",
   },
@@ -125,7 +125,7 @@ export const PRICING_CARDS = [
   },
   {
     planType: "Pro Plan",
-    price: "12.99",
+    price: "10",
     description: "Billed annually. $17 billed monthly",
     highlightFeature: "Everything in free +",
     freatures: [
