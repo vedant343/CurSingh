@@ -52,7 +52,7 @@ const HomePage = () => {
                  text-2xl
                  bg-background"
             >
-              Get Cypress Free
+              Get CurSingh Free
             </Button>
           </div>
         </div>

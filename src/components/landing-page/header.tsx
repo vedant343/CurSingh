@@ -76,7 +76,7 @@ const Header = () => {
         className="w-full flex gap-2
         justify-left items-center"
       >
-        <Image src={Logo} alt="Cypress Logo" width={25} height={25} />
+        <Image src={Logo} alt="CurSingh Logo" width={25} height={25} />
         <span
           className="font-semibold
           dark:text-white
@@ -85,7 +85,7 @@ const Header = () => {
           CurSingh
         </span>
       </Link>
-      <NavigationMenu className="hidden md:block">
+      {/* <NavigationMenu className="hidden md:block">
         <NavigationMenuList className="gap-6">
           <NavigationMenuItem>
             <NavigationMenuTrigger
@@ -197,7 +197,7 @@ const Header = () => {
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>
+      </NavigationMenu> */}
       <aside
         className="flex
         w-full
