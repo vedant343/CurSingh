@@ -36,7 +36,13 @@ const WorkspaceDropdown: React.FC<WorkspaceDropdownProps> = ({
         },
       });
     }
-  }, [privateWorkspaces, collaboratingWorkspaces, sharedWorkspaces]);
+  }, [
+    privateWorkspaces,
+    collaboratingWorkspaces,
+    sharedWorkspaces,
+    state.workspaces.length,
+    dispatch,
+  ]);
 
   const handleSelect = (option: workspace) => {
     setSelectedOption(option);

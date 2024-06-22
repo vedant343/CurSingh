@@ -114,7 +114,19 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
       inTrash: dirDetails.inTrash,
       bannerUrl: dirDetails.bannerUrl,
     } as workspace | Folder | File;
-  }, [state, workspaceId, folderId]);
+  }, [
+    dirType,
+    dirDetails.title,
+    dirDetails.iconId,
+    dirDetails.createdAt,
+    dirDetails.data,
+    dirDetails.inTrash,
+    dirDetails.bannerUrl,
+    state.workspaces,
+    workspaceId,
+    folderId,
+    fileId,
+  ]);
 
   const breadCrumbs = useMemo(() => {
     if (!pathname || !state.workspaces || !workspaceId) return;
@@ -350,7 +362,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
       }
     };
     fetchInformation();
-  }, [fileId, workspaceId, quill, dirType]);
+  }, [fileId, workspaceId, quill, dirType, dispatch, router]);
 
   useEffect(() => {
     if (quill === null || socket === null || !fileId || !localCursors.length)
